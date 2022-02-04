@@ -24,11 +24,11 @@ body {
   transition-delay: 0.8s;
 }
 .navigation.active {
-  width: 200px;
-  height: 200px;
+  width: 450px;
+  height: 450px;
   transition-delay: 0s;
 }
-.navigation span {
+.navigation div {
   position: absolute;
   width: 7px;
   height: 7px;
@@ -37,25 +37,29 @@ body {
   align-items: center;
   background: #fff;
   border-radius: 50%;
-  transform: translate(calc(12px * var(--x)), calc(12px * var(--y)));
+  transform: translate(calc(16px * var(--x)), calc(16px * var(--y)));
   transition: transform 0.5s, width 0.5s, height 0.5s, background 0.5s;
   transition-delay: calc(0.1s * var(--i));
 }
-.navigation.active span {
-  width: 45px;
-  height: 45px;
+.navigation.active div {
+  width: 120px;
+  height: 120px;
   background: #333849;
-  transform: translate(calc(60px * var(--x)), calc(60px * var(--y)));
+  transform: translate(calc(140px * var(--x)), calc(140px * var(--y)));
 }
-.navigation span ion-icon {
+.navigation div img {
+  width: 0;
+  height: 0;
   transition: 0.5s;
-  font-size: 0em;
+  transform: scale(0);
 }
-.navigation.active span ion-icon {
-  font-size: 1.35em;
-  color: #fff;
+.navigation.active div img {
+  transform: scale(1);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
 }
-.navigation.active span:hover ion-icon {
+.navigation.active div:hover img {
   color: #2dfc52;
   filter: drop-shadow(0 0 2px #2dfc52) drop-shadow(0 0 5px #2dfc52)
     drop-shadow(0 0 15px #2dfc52);
